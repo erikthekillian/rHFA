@@ -30,13 +30,20 @@ HFA equation and a description. Could add some example data/code?
 # Guide
 
 ## Step 1: Load dataset
+```{r}
+data_yield = read.csv("E:/rHFA/yield_data.csv")
+yield_long = gather(data_yield,"Location","Yield", "DWIGHT":"NEW_BERLIN", factor_key = TRUE)
+yield_long[,6] = as.numeric(yield_long[,6])
+yield_long = yield_long[!is.na(yield_long[,6]),]
+
+```
 
 
 
 ## Step 2: ID home site
 
-```{r eval=FALSE}
-id_home(df = data_yield, year = "YEAR", geno = "HYBRID", pheno = "yield")
+```{r}
+id_home(df = yield_long, year = "YEAR", geno = "HYBRID", pheno = "Yield")
 ```
 
 

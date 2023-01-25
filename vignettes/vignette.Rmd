@@ -24,7 +24,7 @@ HFA equation and a description. Could add some example data/code?
 
 ## Step 1: Load dataset
 
-Data must be in long format containing the plant variety and data from each location. See the yield_data.csv example file. 
+Data must be in tall format containing the plant variety and data from each location. See the yield_data.csv example file. 
 
 
 ## Step 2: ID home site
@@ -37,12 +37,11 @@ id_home(df = data_yield, year = "YEAR", geno = "LINE", pheno = "YIELD")
 ## Step 3: Get home site
 
 ```{r}
-get_home_site(df = data_yield, geno = "LINE", site = "LOCATION")
+get_home_site(df = data_yield, geno = "LINE", site = c("DWIGHT", "GOODFIELD"))
 ```
 
 
 ## Step 4: Get Libraries
-
 
 
 ## Step 5: Filter site-years
