@@ -3,17 +3,18 @@ title: "rHFA Guide"
 author: "Erik Killian"
 date: "2022-09-12"
 output: html_document
+
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set
-install.packages(c("devtools", "roxygen2", "car", "lme4"))
-install.packages(c("filter_siteyears", "get_home_site", "get_libraries", "get_SS", "id_home", "permute_hfa", "temporal_hfa"))
+```{r setup, include=FALSE, eval=FALSE,echo=FALSE}
+# knitr::opts_chunk$set
+# install.packages(c("devtools", "roxygen2", "car", "lme4"))
+# install.packages(c("filter_siteyears", "get_home_site", "get_libraries", "get_SS", "id_home", "permute_hfa", "temporal_hfa"))
 library(devtools)
 library(roxygen2)
 library(car)
 library(lme4)
-
+library(rHFA)
 ```
 
 # Introduction
@@ -30,13 +31,11 @@ HFA equation and a description. Could add some example data/code?
 
 ## Step 1: Load dataset
 
-data_yield = read.csv("yield_data.csv")
-data_loc = read.csv("location_data.csv")
-
 
 
 ## Step 2: ID home site
-```{r}
+
+```{r eval=FALSE}
 id_home(df = data_yield, year = "YEAR", geno = "HYBRID", pheno = "yield")
 ```
 
